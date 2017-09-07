@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+    <!-- FontAwesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+    <!-- Style -->
+    <link href="../assets/style.css" rel="stylesheet">
+</head>
+<body class="admin-panel">
+<div class="admin-panel__sidebar">
+
+    <h2>Admin Panel</h2>
+    <div class="welcome">
+        <p>Welcome (
+            <strong>
+                <?php echo $_SESSION['user'][0]['username'];?>
+            </strong>
+            )</p>
+    </div>
+
+    <div class="home">
+        <a href="index.php" class="btn"><i class="fa fa-home"></i> Admin Home</a>
+    </div>
+
+    <div class="panel-group" id="admincontrols" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#admincontrols" href="#products" aria-expanded="true"><i class="fa fa-cutlery"></i> restaurants</a>
+                </h4>
+            </div>
+            <div id="products" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                    <ul>
+                        <li><a href="add-restaurant.php">Add restaurant</a></li>
+                        <li><a href="all-restaurants.php">All restaurants</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#admincontrols" href="#guestbook" aria-expanded="false"><i class="fa fa-credit-card "></i> Discount</a>
+                </h4>
+            </div>
+            <div id="guestbook" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    <ul>
+                        <li><a href="add-discount.php">add discount</a></li>
+                        <li><a href="all-discounts.php">All discounts</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#admincontrols" href="#users" aria-expanded="false"><i class="fa fa-list-alt"></i> Categories</a>
+                </h4>
+            </div>
+
+            <div id="users" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    <ul>
+                        <li><a href="add-category.php">Add category</a></li>
+                        <li><a href="all-categories.php">All categories</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFour">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#admincontrols" href="#city" aria-expanded="false"><i class="fa fa-building"></i>city</a>
+                </h4>
+            </div>
+            <div id="city" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    <ul>
+                        <li><a href="add-city.php">add city</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="logout">
+            <a href="logout.php" class="btn btn-danger"><i class="fa fa-sign-out"></i> Logout</a>
+        </div>
+    </div>
+</div>

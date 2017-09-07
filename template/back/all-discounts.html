@@ -1,0 +1,44 @@
+<div class="admin-panel__content">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="section-header">
+                <h1>All discounts</h1>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-hover table-bordered table-content">
+                <thead>
+                <tr>
+                    <th>Discount ID</th>
+                    <th>Card Name</th>
+                    <th>Card Value</th>
+                    <th>restaurant Name</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <?php if(isset($discounts)|| count($discounts)>0){ ?>
+
+                    <?php foreach($discounts as $discount){
+
+                $id = $discount['id'];
+                 $cardName = $discount['card_name'];
+                 $cardValue = $discount['card_value'];
+                 $restaurantName = $discount['restaurant_name'];
+                ?>
+
+                    <td><?php echo $id;?></td>
+                    <td><?php echo $cardName;?></td>
+                    <td><?php echo $cardValue;?></td>
+                    <td><?php echo $restaurantName;?></td>
+                </tr>
+                <?php }?>
+                <?php }?>
+            </table>
+        </div>
+    </div>
+
+</div>
+

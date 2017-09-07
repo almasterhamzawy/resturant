@@ -1,0 +1,79 @@
+<div class="admin-panel__content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="section-header">
+                <h1>Add Discount</h1>
+            </div>
+
+            <form class="form-horizontal" method="post" action="add-discount.php">
+                <?php if(isset($errorMessage) && count($errorMessage)>0){?>
+
+                <div class="alert alert-danger alert-dismissable" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <?php
+
+                    foreach($errorMessage as $error){
+
+                    echo $error.'<br>';
+
+                    }}?>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="discount" class="col-sm-3 control-label">discount</label>
+                    <div class="col-sm-9">
+                        <input type="text"
+                               class="form-control"
+                               id="discount"
+                               placeholder="discount card name"
+                               name="discount">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="discountvalue" class="col-sm-3 control-label">discount value</label>
+                    <div class="col-sm-9">
+                        <input type="number"
+                               class="form-control"
+                               id="discountvalue"
+                               placeholder="discount value"
+                               name="discountvalue"
+
+                                max="100">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="r-discount" class="col-sm-3 control-label">Restaurant name</label>
+
+                    <div class="col-sm-9">
+
+                        <select name="res-name" class="form-control" id="r-discount">
+
+                            <option value="selected" selected>choose restaurant</option>
+
+                            <?php foreach($restaurants as $restaurant){
+                                             $id = $restaurant['id'];
+                                             $restaurantName = $restaurant['restaurant_name'];
+
+                            ?>
+                            <option value="<?php echo $id;?>"><?php echo $restaurantName;?></option>
+                            <?php } ?>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <button type="submit" class="btn btn-success"><i class="fa fa-user"></i> Add Discount</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

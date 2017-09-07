@@ -1,0 +1,40 @@
+<div class="admin-panel__content">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="section-header">
+                <h1>All Restaurants</h1>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-hover table-bordered table-content">
+                <thead>
+                <tr>
+                    <th>Restaurant ID</th>
+                    <th>Restaurant Name</th>
+                    <th>Restaurant City</th>
+                    <th>Restaurant Category</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+               <?php foreach($restaurants as $restaurant){
+                $id = $restaurant['id'];
+                $restaurantName = $restaurant['restaurant_name'];
+                $restaurantCity = $restaurant['city'];
+                $restaurantCategory = $restaurant['category_name'];
+                ?>
+
+                    <td><?php echo $id;?></td>
+                    <td><?php echo $restaurantName;?></td>
+                    <td><?php echo $restaurantCity;?></td>
+                    <td><?php echo $restaurantCategory;?></td>
+                </tr>
+                <?php }?>
+            </table>
+        </div>
+    </div>
+
+</div>
+

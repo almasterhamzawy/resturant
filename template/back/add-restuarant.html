@@ -1,0 +1,75 @@
+<div class="admin-panel__content">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="section-header">
+                <h1>Add restaurant</h1>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <form class="form-horizontal" method="post" action="add-restaurant.php">
+                <div class="form-group">
+                    <label for="product-title" class="col-sm-3 control-label">Restaurant Title</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="r-name" class="form-control" id="product-title" placeholder="Restaurant Title">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="product-desc" class="col-sm-3 control-label">Restaurant Description</label>
+                    <div class="col-sm-9">
+                        <textarea rows="6" name="r-des" class="form-control" id="product-desc" placeholder="Restaurant Description"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-availability" class="col-sm-3 control-label">Restaurant city</label>
+
+                    <div class="col-sm-9">
+
+                        <select name="r-city" class="form-control" id="r-city">
+
+                            <option value="selected" selected>choose city</option>
+
+                            <?php foreach($cities as $city){
+                             $id = $city['id'];
+                             $city = $city['city'];
+                            ?>
+                            <option value="<?php echo $id;?>"><?php echo $city;?></option>
+                            <?php } ?>
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="product-availability" class="col-sm-3 control-label">Restaurant category</label>
+                    <div class="col-sm-9">
+                        <select name="r-category" class="form-control" id="product-availability">
+                            <option value="selected" selected>choose category</option>
+
+                            <?php foreach($categories as $category){
+                             $id = $category['id'];
+                             $categoeyName = $category['category_name'];
+                            ?>
+                            <option value="<?php echo $id;?>"><?php echo $categoeyName;?></option>
+                            <?php } ?>
+
+                        </select>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Add restaurant</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
