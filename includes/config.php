@@ -11,4 +11,10 @@ define('USER','admin'); //  DATABASE USERNAME
 
 define('PASSWORD',''); //PASSWORD FOR DATABASE
 
-define('DB','restaurant'); //DATABASE NAME 
+define('DB','restaurant'); //DATABASE NAME
+
+
+
+spl_autoload_register(function($class) {
+    include 'classes/'. $class .'.class.php';
+});

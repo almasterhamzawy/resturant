@@ -6,8 +6,6 @@ session_start(); //session for store user info when he suffering the site
 
 require'../includes/config.php'; // configuration information of database
 
-require '../includes/classes/restaurantCategory.php'; // restaurantCategory class
-
 include '../includes/checkLogin.php'; // function to check if user login or not
 
 //requiring files end

@@ -44,6 +44,28 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="product-availability" class="col-sm-3 control-label">Restaurant time</label>
+
+                    <div class="col-sm-9">
+
+                        <select name="r-time" class="form-control" id="r-time">
+
+                            <option value="selected" selected>choose time</option>
+
+                            <?php foreach($times as $time){
+                             $id = $time['id'];
+                             $time = $time['time'];
+                            ?>
+                            <option value="<?php echo $id;?>"><?php echo $time;?></option>
+                            <?php } ?>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
                     <label for="product-availability" class="col-sm-3 control-label">Restaurant category</label>
                     <div class="col-sm-9">
                         <select name="r-category" class="form-control" id="product-availability">

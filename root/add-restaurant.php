@@ -6,10 +6,6 @@ session_start(); //session for store user info when he suffering the site
 
 require'../includes/config.php'; // configuration information of database
 
-require '../includes/classes/restaurantInfo.php'; // admin class
-require '../includes/classes/restaurantCity.php'; // admin class
-require '../includes/classes/restaurantCategory.php'; // admin class
-
 include '../includes/checkLogin.php'; // function to check if user login or not
 
 //requiring files end
@@ -34,7 +30,7 @@ if(count($_POST)>0){
     $city = htmlentities($_POST['r-city']); //filtering restaurant where it  coming from the form
     $description = filter_var($_POST['r-des'],FILTER_SANITIZE_STRING); //filtering restaurant where it  coming from the form
     $category = htmlentities($_POST['r-category']); //filtering restaurant where it  coming from the form
-
+    $time = htmlentities($_POST['r-time']);
 
     //  add error validate start
     $errorMessage = array();
@@ -55,7 +51,7 @@ if(count($_POST)>0){
 
         $restaurantObject = new restaurantInfo(); // new object of restaurant class
 
-        $cate =  $restaurantObject->addRestaurant($name,$city,$description,$category);
+        $cate =  $restaurantObject->addRestaurant($name,$city,$description,$category,$time);
 
         header("LOCATION:all-restaurants.php");
 
@@ -74,6 +70,10 @@ $cities = $city->getAllCity();
 $category = new restaurantCategory();
 $categories = $category->getAllCategory();
 
+//get all categories
+
+$time = new restaurantTime();
+$times = $time->getAllTimes();
 
 
 include'../template/back/navbar.html';

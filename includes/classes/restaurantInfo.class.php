@@ -19,9 +19,9 @@ class restaurantInfo{
     }
 
 
-    function addRestaurant($restaurantName,$restaurantCity,$restaurantDescribtion,$restaurantCategory){
+    function addRestaurant($restaurantName,$restaurantCity,$restaurantDescribtion,$restaurantCategory,$restaurant_time){
 
-        $sql ="INSERT INTO `app_restaurant_info`(`restaurant_name`, `restaurant_city`, `restaurant_describtion`, `restaurant_category`) VALUES ('$restaurantName','$restaurantCity','$restaurantDescribtion','$restaurantCategory')";
+        $sql ="INSERT INTO `app_restaurant_info`(`restaurant_name`, `restaurant_city`, `restaurant_describtion`, `restaurant_category`,`restaurant_time`) VALUES ('$restaurantName','$restaurantCity','$restaurantDescribtion','$restaurantCategory','$restaurant_time')";
 
         $add = $this->connection->prepare($sql);
 
