@@ -13,19 +13,20 @@
 
 
     <!-- Style -->
-    <link href="../assets/style.css" rel="stylesheet">    <!-- Google Fonts -->
+    <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
     <title>Restaurant</title>
 </head>
 <body>
+
 <div class="container">
     <div class="row main">
         <div class="main-login main-center">
             <form class="form-group" method="post" action="index.php">
 
-                <select class="col-md-12">
+                <select class="col-md-12" name="category">
                     <option value="selected" selected>choose category</option>
 
                     <?php foreach($categories as $category){
@@ -37,7 +38,7 @@
 
                 </select>
 
-                <select class="col-md-12">
+                <select class="col-md-12" name="restaurant">
                     <option value="selected" selected>choose Restaurant</option>
                     <?php foreach($restaurants as $restaurant){
                              $id = $restaurant['id'];
@@ -48,7 +49,7 @@
 
                 </select>
 
-                <select class="col-md-12">
+                <select class="col-md-12" name="city">
                     <option value="selected" selected>choose City</option>
 
                     <?php foreach($cities as $city){
@@ -59,7 +60,7 @@
                     <?php } ?>
                 </select>
 
-                <select class="col-md-12">
+                <select class="col-md-12" name="time">
                     <option value="selected" selected>choose Time</option>
                     <?php foreach($times as $time){
                              $id = $time['id'];
