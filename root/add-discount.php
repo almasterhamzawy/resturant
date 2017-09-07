@@ -58,6 +58,7 @@ if(count($_POST)>0){
     }
 }
 
+
 $restaurant = new restaurantInfo();
 
 $restaurants =$restaurant->selectAllRestaurants();

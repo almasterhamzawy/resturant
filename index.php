@@ -3,11 +3,26 @@
 
 include'includes/config.php';
 
-include 'includes/classes/restaurantInfo.class.php';
+$city = new restaurantcity();
+$cities = $city->getAllCity();
+
+//get all categories
+
+$category = new restaurantCategory();
+$categories = $category->getAllCategory();
+
+//get all categories
+
+$time = new restaurantTime();
+$times = $time->getAllTimes();
+
+////get all restaurants
+
+$restaurant = new restaurantInfo();
+
+$restaurants = $restaurant->selectAllRestaurants();
 
 
-$get = new restaurantInfo();
 
-echo'<pre>';
-print_r($get->selectCity('cairo'));
+include'template/front/index.html';
 

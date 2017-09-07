@@ -1,51 +1,88 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head></head>
 
+    <!-- Website CSS style -->
+    <!-- FontAwesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+    <!-- Style -->
+    <link href="../assets/style.css" rel="stylesheet">    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <title>Restaurant</title>
+</head>
 <body>
+<div class="container">
+    <div class="row main">
+        <div class="main-login main-center">
+            <form class="form-group" method="post" action="index.php">
 
-<form method="get" action="index.php">
+                <select class="col-md-12">
+                    <option value="selected" selected>choose category</option>
+
+                    <?php foreach($categories as $category){
+                             $id = $category['id'];
+                             $categoeyName = $category['category_name'];
+                            ?>
+                    <option value="<?php echo $id;?>"><?php echo $categoeyName;?></option>
+                    <?php } ?>
+
+                </select>
+
+                <select class="col-md-12">
+                    <option value="selected" selected>choose Restaurant</option>
+                    <?php foreach($restaurants as $restaurant){
+                             $id = $restaurant['id'];
+                             $restaurantName = $restaurant['restaurant_name'];
+                            ?>
+                    <option value="<?php echo $id;?>"><?php echo $restaurantName;?></option>
+                    <?php } ?>
+
+                </select>
+
+                <select class="col-md-12">
+                    <option value="selected" selected>choose City</option>
+
+                    <?php foreach($cities as $city){
+                             $id = $city['id'];
+                             $city = $city['city'];
+                            ?>
+                    <option value="<?php echo $id;?>"><?php echo $city;?></option>
+                    <?php } ?>
+                </select>
+
+                <select class="col-md-12">
+                    <option value="selected" selected>choose Time</option>
+                    <?php foreach($times as $time){
+                             $id = $time['id'];
+                             $time = $time['time'];
+                            ?>
+                    <option value="<?php echo $id;?>"><?php echo $time;?></option>
+                    <?php } ?>
+                </select>
 
 
-    <select name="city">
+                <div class="form-group ">
+                     <input type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button" value="Search">
+                </div>
 
-        <option value="1">cairo</option>
-        <option value="2">giza</option>
-        <option value="3">zgazeg</option>
+            </form>
+        </div>
+    </div>
+</div>
 
-    </select>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-    <select name="category">
-        <option value="1">fast food</option>
-        <option value="2">local food</option>
-        <option value="3">healthy food </option>
-    </select>
-
-    <select name="time">
-
-        <option value="1">12</option>
-        <option value="2">5</option>
-        <option value="3">8 </option>
-
-    </select>
-
-    <select name="restaurant">
-
-        <option value="1">om Hassan</option>
-        <option value="2">kfc</option>
-        <option value="3">mac</option>
-
-    </select>
-
-    <input type="submit" value="search">
-
-
-</form>
-
-
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </body>
-
-
-
 </html>

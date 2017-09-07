@@ -75,6 +75,26 @@ class restaurantInfo{
         }
     }
 
+function getAll(){
+
+$sql = "SELECT * FROM `app_resturant_info`";
+
+    $get = $this->connection->prepare($sql);
+
+    $get->execute();
+
+    if($get->rowCount()>0){
+
+        return $get->fetchAll(PDO::FETCH_ASSOC);
+
+    }else{
+
+        return false;
+
+    }
+
+
+}
 
 
 }
