@@ -24,7 +24,7 @@
 <div class="container-fluid">
     <div class="row main">
         <div class="main-login main-center">
-            <form class="form-group" method="post" action="index.php">
+            <form class="form-group" method="get" action="index.php">
 
                 <select class="col-md-12" name="category">
                     <option value="selected" selected>choose category</option>
@@ -38,7 +38,7 @@
 
                 </select>
 
-                <select class="col-md-12" name="restaurant">
+                <select class="col-md-12">
                     <option value="selected" selected>choose Restaurant</option>
                     <?php foreach($restaurants as $restaurant){
                              $id = $restaurant['id'];
@@ -76,9 +76,32 @@
                 </div>
 
             </form>
+
+            <div>
+
+         <?php
+
+if (is_array($results) || is_object($results))
+{
+    foreach($results as $result){
+        $restaurant_name = $result['restaurant_name'];
+        $restaurant_describtion = $result['restaurant_describtion'];
+        $card_name = $result['card_name'];
+        $card_value = $result['card_value'];
+    }
+
+}
+ ?>
+
+
+            </div>
+
+
         </div>
     </div>
 </div>
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 

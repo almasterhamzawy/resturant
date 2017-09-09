@@ -45,7 +45,7 @@ class restaurantInfo{
     function selectAllRestaurants(){
 
         $sql = "SELECT
-                `app_restaurant_info`.`id`,
+                `app_restaurant_info`.`restaurant_id`,
                 `app_restaurant_info`.`restaurant_name`,
                 `app_city`.`city`,
                 `app_restaurant_category`.`category_name`
@@ -75,26 +75,65 @@ class restaurantInfo{
         }
     }
 
-function getAll(){
+    function getAll(){
 
-$sql = "SELECT * FROM `app_resturant_info`";
+        $sql = "SELECT * FROM `app_resturant_info`";
 
-    $get = $this->connection->prepare($sql);
+        $get = $this->connection->prepare($sql);
 
-    $get->execute();
+        $get->execute();
 
-    if($get->rowCount()>0){
+        if($get->rowCount()>0){
 
-        return $get->fetchAll(PDO::FETCH_ASSOC);
+            return $get->fetchAll(PDO::FETCH_ASSOC);
 
-    }else{
+        }else{
 
-        return false;
+            return false;
+
+        }
 
     }
 
+    function getRestaurant($categoryId,$cityId,$timeId){
 
-}
+        $sql = "SELECT
+            `app_restaurant_info`.`restaurant_name`,
+             `app_restaurant_info`.`restaurant_describtion`,
+              `app_restaurant_discount_card`.`card_name`,
+               `app_restaurant_discount_card`.`card_value`
+                FROM
+                `app_restaurant_info`
+                 INNER JOIN
+                  `app_restaurant_discount_card`
+                  ON
+                  `app_restaurant_discount_card`.`restaurant_dis` = `app_restaurant_info`.`restaurant_id`
+                   WHERE
+                   `app_restaurant_info`.`restaurant_category` = '$categoryId'
+                      AND
+                      `app_restaurant_info`.`restaurant_city` = '$cityId'
+                     AND
+                      `app_restaurant_info`.`restaurant_time` = '$timeId'
+                      ";
+
+        $getRestaurant = $this->connection->prepare($sql);
+
+        $getRestaurant->execute();
+
+
+        if($getRestaurant->rowCount()>0){
+
+
+            return $getRestaurant->fetch(PDO::FETCH_ASSOC);
+
+        }else{
+
+            return false;
+
+        }
+
+    }
+
 
 
 }
