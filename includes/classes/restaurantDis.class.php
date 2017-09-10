@@ -18,6 +18,10 @@ class restaurantDis{
         }
     }
 
+
+
+    //the function is using to add discount
+
     function addDiscount($discountName,$discountValue,$restaurantName)
     {
 
@@ -40,23 +44,24 @@ class restaurantDis{
     }
 
 
+    //returning all discount cards and restaurants names
 
     function getAllDiscounts()
     {
         $sql = "SELECT
-`app_restaurant_discount_card`.`id`,
-`app_restaurant_discount_card`.`card_name`,
-`app_restaurant_discount_card`.`card_value`,
-`app_restaurant_info`.`restaurant_name`
-FROM
-`app_restaurant_discount_card`
-INNER JOIN
-`app_restaurant_info`
-ON
-`app_restaurant_discount_card`.`restaurant_dis`
-=
-`app_restaurant_info`.`id`
-";
+                `app_restaurant_discount_card`.`id`,
+                `app_restaurant_discount_card`.`card_name`,
+                `app_restaurant_discount_card`.`card_value`,
+                `app_restaurant_info`.`restaurant_name`
+                FROM
+                `app_restaurant_discount_card`
+                INNER JOIN
+                `app_restaurant_info`
+                ON
+                `app_restaurant_discount_card`.`restaurant_dis`
+                =
+                `app_restaurant_info`.`id`
+                ";
 
         $get = $this->connection->prepare($sql);
 

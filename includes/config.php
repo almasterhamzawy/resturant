@@ -14,6 +14,7 @@ define('PASSWORD',''); //PASSWORD FOR DATABASE
 define('DB','restaurant'); //DATABASE NAME
 
 
+//function is requiring classes in project
 
 spl_autoload_register(function($class) {
     include 'classes/'. $class .'.class.php';

@@ -20,12 +20,13 @@ $times = $time->getAllTimes();
 ////get all restaurants
 
 
+//get all restaurant information
 
 $restaurant = new restaurantInfo();
 
 $restaurants = $restaurant->selectAllRestaurants();
 
-
+//get restaurant information when user enter category city and time
 
 $category   = (isset($_GET['category']))? (int)$_GET['category']:0;
 $city       = (isset($_GET['city']))? (int)$_GET['city']:0;

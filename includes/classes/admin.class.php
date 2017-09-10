@@ -19,6 +19,8 @@ class admin{
     }
 
 
+    // the function for checking login
+
     public function login($username,$password)
     {
 

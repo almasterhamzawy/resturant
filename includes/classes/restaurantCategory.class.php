@@ -18,6 +18,8 @@ class restaurantCategory{
         }
     }
 
+    //the function is using for add category
+
     function addCategory($categoryName)
     {
 
@@ -40,6 +42,8 @@ class restaurantCategory{
     }
 
 
+
+    // the function is getting all categories
 
     function getAllCategory()
     {

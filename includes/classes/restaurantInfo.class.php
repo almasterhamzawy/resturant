@@ -19,6 +19,8 @@ class restaurantInfo{
     }
 
 
+    //add restaurant information
+
     function addRestaurant($restaurantName,$restaurantCity,$restaurantDescribtion,$restaurantCategory,$restaurant_time){
 
         $sql ="INSERT INTO `app_restaurant_info`(`restaurant_name`, `restaurant_city`, `restaurant_describtion`, `restaurant_category`,`restaurant_time`) VALUES ('$restaurantName','$restaurantCity','$restaurantDescribtion','$restaurantCategory','$restaurant_time')";
@@ -41,6 +43,8 @@ class restaurantInfo{
 
     }
 
+
+    //get all restaurant name and category
 
     function selectAllRestaurants(){
 
@@ -74,6 +78,8 @@ class restaurantInfo{
         }
     }
 
+    //get all restaurant information
+
     function getAll(){
 
         $sql = "SELECT * FROM `app_restaurant_info`";
@@ -93,6 +99,8 @@ class restaurantInfo{
         }
 
     }
+
+    //this function is return the restaurant info when the user input the category ,city and time
 
     function getRestaurant($categoryId,$cityId,$timeId){
 

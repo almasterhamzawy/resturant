@@ -19,6 +19,8 @@ class restaurantTime{
     }
 
 
+    //function to return all time values from database
+
     function getAllTimes()
     {
         $sql = "SELECT * FROM `app_time`";

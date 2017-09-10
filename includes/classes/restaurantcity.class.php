@@ -18,6 +18,8 @@ class restaurantcity{
         }
     }
 
+    //the function is using to add cities
+
     function addcity($cityName)
     {
 
@@ -40,6 +42,8 @@ class restaurantcity{
     }
 
 
+
+    //function using to get all cities
 
     function getAllCity()
     {
