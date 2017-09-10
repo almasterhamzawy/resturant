@@ -45,7 +45,7 @@ class restaurantInfo{
     function selectAllRestaurants(){
 
         $sql = "SELECT
-                `app_restaurant_info`.`restaurant_id`,
+                `app_restaurant_info`.`id`,
                 `app_restaurant_info`.`restaurant_name`,
                 `app_city`.`city`,
                 `app_restaurant_category`.`category_name`
@@ -69,7 +69,6 @@ class restaurantInfo{
             return $restaurants->fetchAll(PDO::FETCH_ASSOC);
 
         }else{
-
             return false;
 
         }
@@ -77,7 +76,7 @@ class restaurantInfo{
 
     function getAll(){
 
-        $sql = "SELECT * FROM `app_resturant_info`";
+        $sql = "SELECT * FROM `app_restaurant_info`";
 
         $get = $this->connection->prepare($sql);
 
@@ -107,7 +106,7 @@ class restaurantInfo{
                  INNER JOIN
                   `app_restaurant_discount_card`
                   ON
-                  `app_restaurant_discount_card`.`restaurant_dis` = `app_restaurant_info`.`restaurant_id`
+                  `app_restaurant_discount_card`.`restaurant_dis` = `app_restaurant_info`.`id`
                    WHERE
                    `app_restaurant_info`.`restaurant_category` = '$categoryId'
                       AND
@@ -124,10 +123,9 @@ class restaurantInfo{
         if($getRestaurant->rowCount()>0){
 
 
-            return $getRestaurant->fetch(PDO::FETCH_ASSOC);
+            return $getRestaurant->fetchAll(PDO::FETCH_ASSOC);
 
         }else{
-
             return false;
 
         }

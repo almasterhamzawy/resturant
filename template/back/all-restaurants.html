@@ -19,8 +19,10 @@
                 <tbody>
 
                 <tr>
-               <?php foreach($restaurants as $restaurant){
-                $id = $restaurant['restaurant_id'];
+
+               <?php if (is_array($restaurants) || is_object($restaurants)){
+                foreach($restaurants as $restaurant){
+                $id = $restaurant['id'];
                 $restaurantName = $restaurant['restaurant_name'];
                 $restaurantCity = $restaurant['city'];
                 $restaurantCategory = $restaurant['category_name'];
@@ -31,6 +33,7 @@
                     <td><?php echo $restaurantCity;?></td>
                     <td><?php echo $restaurantCategory;?></td>
                 </tr>
+                <?php }?>
                 <?php }?>
             </table>
         </div>

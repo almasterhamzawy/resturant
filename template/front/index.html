@@ -72,33 +72,55 @@
 
 
                 <div class="form-group ">
-                     <input type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button" value="Search">
+                    <input type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button" value="Search">
                 </div>
 
             </form>
-
-            <div>
-
-         <?php
-
-if (is_array($results) || is_object($results))
-{
-    foreach($results as $result){
-        $restaurant_name = $result['restaurant_name'];
-        $restaurant_describtion = $result['restaurant_describtion'];
-        $card_name = $result['card_name'];
-        $card_value = $result['card_value'];
-    }
-
-}
- ?>
-
-
-            </div>
-
-
         </div>
     </div>
+</div>
+
+<div class="container">
+    <h2>The Restaurant Information</h2>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Restaurant Name</th>
+            <th>Restaurant Description</th>
+            <th>Discount Card Name</th>
+            <th>Discount Card Value</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+
+      <tr>
+          <?php
+
+           if(is_array($newResults) && count($newResults)>0){?>
+
+            <?php foreach($newResults as $result){
+
+            $rName = $result['restaurant_name'];
+            $rDes = $result['restaurant_describtion'];
+            $rCard = $result['card_name'];
+            $rCardValue = $result['card_value'];
+            ?>
+
+            <td><?php echo $rName;?></td>
+            <td><?php echo $rDes;?></td>
+            <td><?php echo $rCard;?></td>
+            <td><?php echo $rCardValue;?></td>
+        <?php }?>
+        <?php }?>
+
+        </tr>
+
+
+        </tbody>
+    </table>
 </div>
 
 
